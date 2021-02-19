@@ -40,6 +40,7 @@ public class FloraGenerator implements RegionFunction {
     private boolean biomeAware = false;
     private final Pattern desertPattern = getDesertPattern();
     private final Pattern temperatePattern = getTemperatePattern();
+    private final Pattern underwaterPattern = getUnderwaterPattern();
 
     /**
      * Create a new flora generator.
@@ -98,6 +99,21 @@ public class FloraGenerator implements RegionFunction {
         pattern.add(BlockTypes.GRASS.getDefaultState(), 300);
         pattern.add(BlockTypes.POPPY.getDefaultState(), 5);
         pattern.add(BlockTypes.DANDELION.getDefaultState(), 5);
+        return pattern;
+    }
+
+    /**
+     * Get a pattern for plants to place inside an underwater environment.
+     *
+     * @return a pattern that places flora
+     */
+    public static Pattern getUnderwaterPattern() {
+        //todo set values for the patterns
+        RandomPattern pattern = new RandomPattern();
+        pattern.add(BlockTypes.SEA_PICKLE.getDefaultState(), 0);
+        pattern.add(BlockTypes.SEAGRASS.getDefaultState(), 0);
+        pattern.add(BlockTypes.KELP_PLANT.getDefaultState(), 0);
+        pattern.add(BlockTypes.KELP.getDefaultState(), 0);
         return pattern;
     }
 
