@@ -244,7 +244,7 @@ tasks.withType<ShadowJar>().configureEach {
 
 tasks.named("assemble").configure {
     dependsOn("shadowJar")
-    dependsOn("reobfShadowJar")
+    // dependsOn("reobfShadowJar")
 }
 
 publishMods {
